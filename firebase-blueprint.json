@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "Concept": {
+      "title": "Car Concept",
+      "description": "A high-end AI-generated automotive concept.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "description": "The name given to the concept." },
+        "prompt": { "type": "string", "description": "The AI prompt used to generate the image." },
+        "imageUrl": { "type": "string", "description": "The URL of the generated image." },
+        "color": { "type": "string", "description": "The primary color of the vehicle." },
+        "style": { "type": "string", "description": "The design style (e.g., Cyberpunk, Retro-Futurism, Luxury)." },
+        "specs": {
+          "type": "object",
+          "properties": {
+            "topSpeed": { "type": "string" },
+            "acceleration": { "type": "string" },
+            "power": { "type": "string" }
+          }
+        },
+        "ownerId": { "type": "string", "description": "The UID of the creator." },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "prompt", "imageUrl", "ownerId", "createdAt"]
+    }
+  },
+  "firestore": {
+    "concepts": {
+      "schema": "Concept",
+      "description": "Collection of community and user automotive concepts."
+    }
+  }
+}
